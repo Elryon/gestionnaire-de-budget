@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Comment budget ?</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <section class="container">
+        <div class="depense">
+
+            <button id="addDepense" class="addDepense">+ Dépenses</button>
+
+            <div class="rows">
+                <button class="nom" disabled>Nom</button>
+                <button class="montant" disabled>Montant</button>
+                <button class="vide" disabled>  </button>
+            </div>
+        </div>
+
+        <div class="revenu">
+
+            <button id="addRevenu" class="addRevenu">+ Revenu</button>
+
+            <div class="rows">
+                <button class="nom" disabled>Nom</button>
+                <button class="montant" disabled>Montant</button>
+                <button class="vide" disabled>X</button>
+            </div>
+
+            <div class="rows">
+                <input type="text" class="itemNom">
+                <input type="number" class="itemMontant">
+                <button class="suppression">X</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="totaux">
+
+        <div>
+            <p class="neutral">Dépense total :</p>
+            <p class="negatif">0</p>
+        </div>
+
+        <div>
+            <p class="neutral">Revenu total :</p>
+            <p class="positif">0</p>
+        </div>
+
+        <div>
+            <p class="positif">Bilan total :</p>
+            <p class="positif">0</p>
+        </div>
+    </section>
+</body>

@@ -1,0 +1,121 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.container{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+}
+
+.revenu, .depense{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+button{
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    border-radius: 0.25rem;
+    border: 1px solid transparent;
+    padding: 9px 18px;
+    height: 36px;
+    margin: 4px;
+}
+
+.rows{
+    display: grid;
+    grid-template-columns: 2fr 2fr 0.1fr;
+    gap: 0.2fr;
+}
+
+.nom, .montant{
+    background-color: #198754;
+    text-align: center;
+}
+
+.vide{
+    background-color: white;
+    border-radius: 0.25rem;
+    border: 1px solid transparent;
+    padding: 9px 12px;
+    height: 36px;
+}
+
+.itemNom, .itemMontant{
+    border-radius: 0.25rem;
+    border: 1px solid;
+    padding: 9px 0px;
+    height: 18px;
+    margin: 4px;
+    width: 97%;
+}
+
+input{
+    text-align: center;
+}
+
+.suppression{
+    background-color: rgb(211, 0, 0);
+    color: white;
+    border-radius: 0.25rem;
+    border: 1px solid transparent;
+    padding: 9px 12px;
+    height: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.suppression:hover{
+    background-color: rgb(175, 0, 0);
+}
+
+.addDepense:hover, .addRevenu:hover{
+    background-color: rgb(71, 71, 71);
+}
+
+.totaux{
+    width: 300px;
+    height: 200px;
+    border-radius: 0.25rem;
+    background-color: rgba(189, 189, 189, 0.226);
+    border: solid rgba(54, 54, 54, 0.123);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.totaux p{
+    margin: 0;
+}
+
+.totaux div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.neutral{
+    font-size: 18px;
+}
+
+.positif{
+    color: green;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.negatif{
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
