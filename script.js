@@ -1,9 +1,10 @@
 //création des tableau des revenus et dépenses ainsi que la classe pour les remplir
 
-let revenuTest ={nom: "chaussures", montant: "70"};
-let depenseTest = {nom: "nourriture", montant: "80"};
+let revenuTest ={nom: "chaussures", montant: 70};
+let revenuTest2 = {nom:"chèque mamie", montant: 50};
+let depenseTest = {nom: "nourriture", montant: 80};
 
-let Revenus = [revenuTest];
+let Revenus = [revenuTest,revenuTest2];
 let Depense = [depenseTest];
 
 generateDepenses(Depense);
