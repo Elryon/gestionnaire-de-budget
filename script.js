@@ -1,6 +1,13 @@
 //création des tableau des revenus et dépenses ainsi que la classe pour les remplir
-let Revenus = [];
-let Depense = [];
+
+let revenuTest ={nom: "chaussures", montant: "70"};
+let depenseTest = {nom: "nourriture", montant: "80"};
+
+let Revenus = [revenuTest];
+let Depense = [depenseTest];
+
+generateDepenses(Depense);
+generateRevenus(Revenus);
 
 
 class element {
