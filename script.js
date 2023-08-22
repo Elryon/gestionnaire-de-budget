@@ -64,9 +64,7 @@ function generateDepenses(depense){
     for (let i = 0; i < supprDepenseBtn.length; i++){
         supprDepenseBtn[i].addEventListener("click", function(event){
             const indice = [i];
-            for(let j = Depense.length -1; j>= 0; j--){
-                Depense.splice(indice,1);
-            }
+            Depense.splice(indice,1);
             generateDepenses(Depense);
             calculBilan(Revenus, Depense);
         })
@@ -109,6 +107,16 @@ function generateRevenus(revenu){
     for (let i = 0; i < itemNom.length; i++){
         itemNom[i].addEventListener("change", function(event){
             Revenus[i].nom = itemNom[i].value;
+        })
+    }
+
+    const supprDepenseBtn = document.querySelectorAll(".listRevenu .rows button")
+    for (let i = 0; i < supprDepenseBtn.length; i++){
+        supprDepenseBtn[i].addEventListener("click", function(event){
+            const indice = [i];
+            Revenus.splice(indice,1);
+            generateRevenus(Revenus);
+            calculBilan(Revenus, Depense);
         })
     }
 }
