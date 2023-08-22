@@ -1,11 +1,6 @@
 //création des tableau des revenus et dépenses ainsi que la classe pour les remplir
-
-let revenuTest ={nom: "chaussures", montant: 70};
-let revenuTest2 = {nom:"chèque mamie", montant: 50};
-let depenseTest = {nom: "nourriture", montant: 80};
-
-let Revenus = [revenuTest,revenuTest2];
-let Depense = [depenseTest];
+let Revenus = [];
+let Depense = [];
 
 generateDepenses(Depense);
 generateRevenus(Revenus);
@@ -18,7 +13,7 @@ class element {
     }
 }
 
-//création des fonctions de génération des lignes des colonnes revenu et dépense
+//création des fonctions de génération des lignes des colonnes revenu et dépense ,et de leur interactivité
 function generateDepenses(depense){
     const divDepense = document.querySelector(".listDepense");
     divDepense.innerHTML = "";
@@ -126,28 +121,16 @@ const addDepense = document.getElementById('addDepense');
 const addRevenu = document.getElementById('addRevenu');
 
 addDepense.addEventListener('click', ()=>{
-    var depense = new element("","0");
+    var depense = new element("",0);
     Depense.push(depense);
     generateDepenses(Depense);
 })
 
 addRevenu.addEventListener('click', ()=>{
-    var revenu = new element("","0");
+    var revenu = new element("",0);
     Revenus.push(revenu);
     generateRevenus(Revenus);
 })
-
-/*const supprDepenseBtn = document.querySelectorAll(".listDepense .rows button")
-for (let i = 0; i < supprDepenseBtn.length; i++){
-    supprDepenseBtn[i].addEventListener("click", function(event){
-        const indice = [i];
-        console.log('click' + indice);
-        for(let j = Depense.length -1; j>= 0; j--){
-            Depense.splice(indice,1)  
-        }
-        generateDepenses(Depense)
-    })
-}*/
 
 
 //calcul des bilans à partir des tableaux
