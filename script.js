@@ -43,6 +43,34 @@ function generateDepenses(depense){
         row.appendChild(amount);
         row.appendChild(supprBtn);
     }
+
+    const itemMontant = document.querySelectorAll(".listDepense .rows .itemMontant");
+    for (let i = 0; i < itemMontant.length; i++){
+        itemMontant[i].addEventListener("change", function(event){
+            Depense[i].montant = Number(itemMontant[i].value);
+            calculBilan(Revenus, Depense);
+        })
+    }
+
+    const itemNom = document.querySelectorAll(".listDepense .rows .itemNom");
+    for (let i = 0; i < itemNom.length; i++){
+        itemNom[i].addEventListener("change", function(event){
+            Depense[i].nom = itemNom[i].value;
+        })
+    }
+
+
+    const supprDepenseBtn = document.querySelectorAll(".listDepense .rows button")
+    for (let i = 0; i < supprDepenseBtn.length; i++){
+        supprDepenseBtn[i].addEventListener("click", function(event){
+            const indice = [i];
+            for(let j = Depense.length -1; j>= 0; j--){
+                Depense.splice(indice,1);
+            }
+            generateDepenses(Depense);
+            calculBilan(Revenus, Depense);
+        })
+    }
 }
 
 function generateRevenus(revenu){
@@ -68,6 +96,21 @@ function generateRevenus(revenu){
         row.appendChild(amount);
         row.appendChild(supprBtn);
     }
+    
+    const itemMontant = document.querySelectorAll(".listRevenu .rows .itemMontant");
+    for (let i = 0; i < itemMontant.length; i++){
+        itemMontant[i].addEventListener("change", function(event){
+            Revenus[i].montant = Number(itemMontant[i].value);
+            calculBilan(Revenus, Depense);
+        })
+    }
+
+    const itemNom = document.querySelectorAll(".listRevenu .rows .itemNom");
+    for (let i = 0; i < itemNom.length; i++){
+        itemNom[i].addEventListener("change", function(event){
+            Revenus[i].nom = itemNom[i].value;
+        })
+    }
 }
 
 //mise en fonction des boutons de génération de nouveaux revenus et dépense
@@ -86,25 +129,35 @@ addRevenu.addEventListener('click', ()=>{
     generateRevenus(Revenus);
 })
 
+/*const supprDepenseBtn = document.querySelectorAll(".listDepense .rows button")
+for (let i = 0; i < supprDepenseBtn.length; i++){
+    supprDepenseBtn[i].addEventListener("click", function(event){
+        const indice = [i];
+        console.log('click' + indice);
+        for(let j = Depense.length -1; j>= 0; j--){
+            Depense.splice(indice,1)  
+        }
+        generateDepenses(Depense)
+    })
+}*/
+
 
 //calcul des bilans à partir des tableaux
 function calculBilan(revenu, depense){
-    var totalRevenus = 0
+    var totalRevenus = 0;
     var totalDepenses = 0;
 
     for(let i=0; i<revenu.length; i++){
         totalRevenus = totalRevenus + revenu[i].montant;
-
-        const revenuShown = document.getElementById('revenuTotal');
-        revenuShown.innerText = totalRevenus
     }
+    const revenuShown = document.getElementById('revenuTotal');
+    revenuShown.innerText = totalRevenus
 
     for(let i=0; i<depense.length; i++){
         totalDepenses = totalDepenses + depense[i].montant;
-
-        const depenseShown = document.getElementById('depenseTotal');
-        depenseShown.innerText = totalDepenses;
     }
+    const depenseShown = document.getElementById('depenseTotal');
+    depenseShown.innerText = totalDepenses;
 
     var totalBilan = 0;
     totalBilan = totalRevenus-totalDepenses;
